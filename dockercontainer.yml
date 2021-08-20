@@ -1,0 +1,23 @@
+---
+- name: This playbook is for container demo
+  hosts: "ansibleclient"
+
+  tasks: 
+    - name: Pulling the image
+      command: "docker image pull yogeshraheja/demosn:v1"
+      register: imageoutput
+
+    - name: Display image output
+      debug: var=imageoutput
+
+    - name: Container creation
+      command: "docker container run -itd --name=jenkinstest -p 82:80 yogeshraheja/demosn:v1"
+
+    - name: Listing container
+      command: "docker container ls -a"
+      register: containeroutput
+
+    - name: Container outputs
+      debug: var=containeroutput
+
+    
