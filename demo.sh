@@ -1,5 +1,5 @@
 #!/bin/bash
 echo "#################SCRIPT FROM GIT###############"
 sudo yum repolist
-sleep 20
+sleep 25
 echo "################SCRIPT FROM GIT###############"
